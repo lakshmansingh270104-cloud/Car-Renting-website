@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DRIVEEASE</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 15px 30px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+/* Sections */
+section { display: none; padding: 40px; }
+.active { display: block; }
+
+/* Hero */
+.hero {
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1502877338535-766e1452684a');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Cars */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.car-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  background: white;
+  text-align: center;
+}
+.car-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Forms */
+input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 260px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 10px;
+  background: #ff416c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <h2>Drive Ease</h2>
+  <ul>
+    <li onclick="showPage('home')">Home</li>
+    <li onclick="showPage('cars')">Cars</li>
+    <li onclick="showPage('booking')">Booking</li>
+    <li onclick="showPage('payment')">Payment</li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+
+<section id="home" class="active">
+  <div class="hero">
+    <h1>Rent Your Dream Car</h1>
+    <button onclick="showPage('cars')">Book Now</button>
+  </div>
+</section>
+
+<!-- CARS -->
+
+<section id="cars">
+  <h2 style="text-align:center;">Available Cars</h2>
+  <div class="car-grid">
+<div class="car-card">
+  <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/FRONX/9916/1771931850505/front-left-side-47.jpg">
+  <h3>fronx</h3>
+  <p>₹2100/day</p>
+  <button onclick="selectCar('fronx',2100)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80&q=80">
+  <h3>Baleno</h3>
+  <p>₹1800/day</p>
+  <button onclick="selectCar('Baleno',1800)">Rent Now</button>
+</div>
+
+<div class="car-card">
+  <img src="https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/31883/scorpio-exterior-left-front-three-quarter.jpeg?q=80">
+  <h3>Scorpio</h3>
+  <p>₹3000/day</p>
+  <button onclick="selectCar('Scorpio',3000)">Rent Now</button>
+</div>
+
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/642x336/n/cw/ec/39345/tiago-exterior-right-front-three-quarter-34.png?isig=0&q=80">
+  <h3>tiago</h3>
+  <p>₹1400/day</p>
+  <button onclick="selectCar('tiago',1400)">Rent Now</button>
+</div>
+
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/642x336/n/cw/ec/159099/swift-exterior-right-front-three-quarter-31.png?isig=0&q=80">
+  <h3>swift</h3>
+  <p>₹1500/day</p>
+  <button onclick="selectCar('swift',1400)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLn-FmcsFhdTr3q5EUsHZ0I2VizYk0SJzK1fRhs3jlDiISBqOGzXLePnWWlJ1HwgHlh7XTd-SIdN30WsC73tKNT-nPc8rJdn2D9PLrZQ&s=10>
+  <h3>fornutner</h3>
+  <p>₹4000/day</p>
+  <button onclick="selectCar('fornutner',4000)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAHSH3S551qcIzpuGEgj9SZBPigkBwq1u0yXk4jL3b12VJqEr2J3ztUpu85Dw1Lv4ZssPD8fgaJ0xr65Q4icnbdyRFuwey2bgCnMlpVtc&s=10">
+  <h3>bolero/<h3>
+  <p>₹2100/day</p>
+  <button onclick="selectCar('bolero',2100)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/124839/thar-roxx-exterior-right-front-three-quarter-2.png?isig=0&q=80">
+  <h3>thar</h3>
+  <p>₹2500/day</p>
+  <button onclick="selectCar('thar',2500)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/150603/i20-exterior-right-front-three-quarter-13.png?isig=0&q=80">
+  <h3>i20/h3>
+  <p>₹1800/day</p>
+  <button onclick="selectCar('i20',1800)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/198567/3-series-exterior-left-rear-three-quarter.jpeg?isig=0&q=80">
+  <h3>Bmw</h3>
+  <p>₹8000/day</p>
+  <button onclick="selectCar('Bmw',8000)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/1056x594/n/zwuqg3a_1573857.jpg?q=80">
+  <h3>Xl6</h3>
+  <p>₹1600/day</p>
+  <button onclick="selectCar('Xl6',1600)">Rent Now</button>
+</div>
+<div class="car-card">
+  <img src="https://imgd.aeplcdn.com/1056x594/n/zwuqg3a_1573857.jpg?q=80">
+  <h3>Verna</h3>
+  <p>₹2300/day</p>
+  <button onclick="selectCar('Verna',2300)">Rent Now</button>
+</div>
+
+
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section id="booking">
+  <h2 style="text-align:center;">Book Your Car</h2>
+
+  <form style="text-align:center;" onsubmit="return goToPayment()">
+    <input type="text" id="userName" placeholder="Enter Your Name" required>
+    <input type="date" id="bookingDate" required>
+    <input type="text" id="selectedCar" placeholder="Selected Car" readonly>
+    <input type="number" id="days" placeholder="Number of Days" min="1" required>
+    <button type="submit">Proceed to Payment</button>
+  </form>
+</section>
+
+<!-- PAYMENT -->
+
+<section id="payment">
+  <h2 style="text-align:center;">Payment & Verification</h2>
+
+  <form style="text-align:center;" onsubmit="return verifyUser()">
+
+```
+<input type="text" id="aadhaar" placeholder="Aadhaar Number (12 digits)" required>
+<input type="text" id="license" placeholder="Driving License Number" required>
+<select id="paymentMethod">
+<option value="">Select Payment</option>
+<option>UPI</option>
+<option>Credit Card</option>
+<option>Debit Card</option>
+</select>
+
+<div id="paymentDetails"></div>
+<div id="demoDetails" style="color:green; font-weight:bold;"></div>
+
+<input type="number" id="amount" placeholder="Amount ₹" readonly required>
+
+<button type="submit">Verify & Pay</button>
+```
+
+  </form>
+
+  <p id="result" style="text-align:center; font-weight:bold;"></p>
+</section>
+
+<script>
+let pricePerDay = 0;
+
+function showPage(id){
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function selectCar(name, price){
+  document.getElementById('selectedCar').value = name;
+  pricePerDay = price;
+  showPage('booking');
+}
+
+function goToPayment(){
+  let name = document.getElementById("userName").value.trim();
+  let date = document.getElementById("bookingDate").value;
+  let car = document.getElementById("selectedCar").value;
+  let days = document.getElementById("days").value;
+
+  if(name === "" || date === "" || car === "" || days === ""){
+    alert("❌ Please fill all booking details");
+    return false;
+  }
+
+  let total = days * pricePerDay;
+  document.getElementById("amount").value = total;
+
+  showPage('payment');
+  return false;
+}
+
+// Dynamic Payment + Demo Details
+document.getElementById("paymentMethod").addEventListener("change", function(){
+  let m = this.value;
+  let box = document.getElementById("paymentDetails");
+  let demo = document.getElementById("demoDetails");
+
+  if(m === "UPI"){
+    box.innerHTML = '<input type="text" placeholder="Enter UPI ID" required>';
+    demo.innerHTML = "💡 Demo UPI: demo@upi";
+  }
+  else if(m === "Credit Card" || m === "Debit Card"){
+    box.innerHTML = `
+      <input type="text" placeholder="Card Number (16 digits)" required>
+      <input type="text" placeholder="Expiry MM/YY" required>
+      <input type="password" placeholder="CVV" required>
+    `;
+    demo.innerHTML = "💡 Demo Card: 1234 5678 9012 3456 | CVV: 123";
+  }
+  else{
+    box.innerHTML = "";
+    demo.innerHTML = "";
+  }
+});
+
+// Aadhaar + Payment Validation
+function verifyUser(){
+  let a = document.getElementById("aadhaar").value.trim();
+  let l = document.getElementById("license").value.trim();
+  let p = document.getElementById("paymentMethod").value;
+
+  let pattern = /^[0-9]{12}$/;
+
+  if(!pattern.test(a)){
+    document.getElementById("result").innerText = "❌ Aadhaar must be 12 digits";
+    return false;
+  }
+
+  if(/^(\d)\1{11}$/.test(a)){
+    document.getElementById("result").innerText = "❌ Invalid Aadhaar";
+    return false;
+  }
+
+  if(l.length < 5){
+    document.getElementById("result").innerText = "❌ Invalid License";
+    return false;
+  }
+
+  if(p === ""){
+    document.getElementById("result").innerText = "❌ Select Payment Method";
+    return false;
+  }
+
+  document.getElementById("result").innerText = "✅ Payment Successful (Demo)";
+  return false;
+}
+</script>
+
+</body>
+</html>
